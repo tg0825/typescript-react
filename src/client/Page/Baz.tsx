@@ -8,7 +8,7 @@ type BazProps = {
   optional?: string;
 };
 
-const Bar = ({ onSubmit, optional }: BazProps) => {
+const Bar = ({ onSubmit, optional = '123' }: BazProps) => {
   const [form, setForm] = useState({
     name: '',
     description: ''
@@ -44,7 +44,7 @@ const Bar = ({ onSubmit, optional }: BazProps) => {
         <input name="description" value={description} onChange={handleChange} />
         <button type="submit">submit</button>
       </form>
-      <div>`${optional}`</div>
+      <div>{`${optional}`}</div>
     </div>
   );
 };
