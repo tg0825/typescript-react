@@ -13,7 +13,8 @@ const App = () => {
   // type error
   // const onSubmit = form => {
   const onSubmit = (form: { name: string; description: string }) => {
-    console.log(form);
+    const { name, description } = form;
+    alert(`${name} ${description}! ok! typescript!`);
   };
 
   return (

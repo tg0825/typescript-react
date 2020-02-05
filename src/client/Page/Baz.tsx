@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// 함수의 타입 지정
 type BazProps = {
   // type function
   onSubmit: (form: { name: string; description: string }) => void;
@@ -39,7 +40,7 @@ const Bar = ({ onSubmit }: BazProps) => {
       <form onSubmit={handleSubmit}>
         <input name="name" value={name} onChange={handleChange} />
         <input name="description" value={description} onChange={handleChange} />
-        <button type="button">submit</button>
+        <button type="submit">submit</button>
       </form>
     </div>
   );
