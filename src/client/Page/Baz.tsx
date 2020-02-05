@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 type BazProps = {
   // type function
   onSubmit: (form: { name: string; description: string }) => void;
+  // 생략해도 되는 props
+  optional?: string;
 };
 
-const Bar = ({ onSubmit }: BazProps) => {
+const Bar = ({ onSubmit, optional }: BazProps) => {
   const [form, setForm] = useState({
     name: '',
     description: ''
@@ -42,6 +44,7 @@ const Bar = ({ onSubmit }: BazProps) => {
         <input name="description" value={description} onChange={handleChange} />
         <button type="submit">submit</button>
       </form>
+      <div>`${optional}`</div>
     </div>
   );
 };
