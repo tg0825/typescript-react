@@ -1,21 +1,35 @@
 {
     "parser" : "@typescript-eslint/parser",
     "extends": [
-        "airbnb-base",
-        "eslint-config-prettier",
-        "plugin:@typescript-eslint/eslint-recommended",
+        "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:prettier/recommended",
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript"
     ],
     "parserOptions": {
-        "ecmaVersion": 6
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "plugins": [
-        "eslint-plugin-prettier",
-        "@typescript-eslint"
+        "react",
+        "@typescript-eslint",
+        "eslint-plugin-prettier"
     ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
     "rules": {
         "indent": [
             "error",
@@ -28,10 +42,5 @@
                 "printWidth": 80
             }
         ]
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-    },
+    }
 }

@@ -1,11 +1,24 @@
 import * as React from 'react';
 
-const Foo = (props: any) => {
-  const { name } = props;
-  const message: string = name;
-  console.log(name);
+type FooProps = {
+  name?: string;
+  mark: string;
+};
 
-  return <p>{message} Foo</p>;
+type BarProps = {
+  age: number;
+};
+
+const Foo = ({ name, mark }: BarProps) => {
+  return (
+    <p>
+      hello {name} {mark}
+    </p>
+  );
+};
+
+Foo.defaultProps = {
+  mark: '!'
 };
 
 export default Foo;

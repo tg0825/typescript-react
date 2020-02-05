@@ -1,7 +1,16 @@
 import * as React from 'react';
 
-const Bar = () => {
-  return <p>Bar</p>;
+type BarProps = {
+  onClick: (name: string) => void;
+};
+
+const Bar = ({ onClick }: BarProps) => {
+  const handleClick = () => onClick(name);
+  return (
+    <div>
+      <button onClick={handleClick}>click</button>
+    </div>
+  );
 };
 
 export default Bar;
